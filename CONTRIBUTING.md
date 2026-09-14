@@ -1,5 +1,16 @@
 # Contribuer au projet
 
+| Élément | Valeur |
+|----------|---------|
+| **Nom du document** | `CONTRIBUTING.md` |
+| **Technologie** | Markdown |
+| **Catégorie** | Contribution au projet |
+| **Objectif** | Définir les règles, exigences et bonnes pratiques applicables aux contributions au projet |
+| **Auteur** | Sébastien Allely |
+| **Version** | 1.0 |
+| **Date de dernière modification** | 01/08/2026 |
+
+---
 Merci de l'intérêt que vous portez à **Cybersecurity Learning Lab**.
 
 L'objectif de ce projet est de proposer un référentiel pédagogique fiable, reproductible et maintenable autour de la cybersécurité défensive. Toute contribution est la bienvenue dès lors qu'elle respecte les principes définis dans le `PROJECT_CHARTER.md`.
