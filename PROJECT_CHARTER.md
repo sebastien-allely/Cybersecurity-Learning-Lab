@@ -1,5 +1,16 @@
 # PROJECT CHARTER
 
+| Élément | Valeur |
+|----------|---------|
+| **Nom du document** | `PROJECT_CHARTER.md` |
+| **Technologie** | Markdown |
+| **Catégorie** | Gouvernance du projet |
+| **Objectif** | Définir la vision, les objectifs, les principes, le périmètre et les engagements du projet |
+| **Auteur** | Sébastien Allely |
+| **Version** | 1.0 |
+| **Date de dernière modification** | 01/08/2026 |
+
+---
 ## Vision
 
 Cybersecurity Learning Lab est un référentiel pédagogique francophone destiné à accompagner les professionnels de l'informatique et les personnes en reconversion dans l'apprentissage de la cybersécurité défensive.
@@ -58,8 +69,8 @@ Le laboratoire de référence repose sur l'architecture suivante :
 
 * un cluster Proxmox VE composé de deux nœuds ;
 * une machine virtuelle Active Directory ;
-* une machine virtuelle GLPI ;
-* une machine virtuelle Zabbix.
+* une machine virtuelle GLPI01 ;
+* une machine virtuelle ZABBIX01.
 
 Cette architecture constitue le socle pédagogique du projet. Elle peut être adaptée en fonction des besoins du lecteur ou de son environnement.
 

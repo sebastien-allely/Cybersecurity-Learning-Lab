@@ -1,5 +1,19 @@
 # ROADMAP
 
+
+| Élément | Valeur |
+| **Nom du document** | `ROADMAP.md` |
+| **Technologie** | Référentiel du laboratoire |
+| **Catégorie** | Gestion de projet |
+| **Objectif** | Présenter et documenter les éléments nécessaires à la compréhension du sujet traité par ce document dans le référentiel Cybersecurity-Learning-Lab. |
+| **Auteur** | Sébastien Allely |
+| **Version** | 1.0 |
+| **Date de dernière modification** | 01/08/2026 |
+
+
+
+
+---
 ## Objectif
 
 Cette feuille de route présente les principaux modules qui composeront progressivement le projet **Cybersecurity Learning Lab**.
@@ -56,7 +70,7 @@ Les priorités pourront évoluer en fonction des retours de la communauté, des 
 
 # Phase 4 — Supervision
 
-* [ ] Zabbix
+* [ ] ZABBIX01
 * [ ] Templates
 * [ ] Tableaux de bord
 * [ ] Détection
@@ -68,7 +82,7 @@ Les priorités pourront évoluer en fonction des retours de la communauté, des 
 # Phase 5 — Gestion des services
 
 * [ ] Active Directory
-* [ ] GLPI
+* [ ] GLPI01
 * [ ] DNS
 * [ ] LDAP
 * [ ] Sauvegardes
