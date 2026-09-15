@@ -1,288 +1,0 @@
-docs/02-Architecture/Active-Directory/01-Justification-de-l-outil.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification de l'outil[m[41m[m
-docs/02-Architecture/Active-Directory/02-Identification-des-actifs.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Identification des actifs[m[41m[m
-docs/02-Architecture/Active-Directory/03-Analyse-des-risques.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Analyse des risques[m[41m[m
-docs/02-Architecture/Active-Directory/04-Surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Surface d'attaque[m[41m[m
-docs/02-Architecture/Active-Directory/05-Evenements-observables.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Événements observables[m[41m[m
-docs/02-Architecture/Active-Directory/06-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Justification des décisions[m[41m[m
-docs/02-Architecture/Active-Directory/07-References.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Références[m[41m[m
-docs/02-Architecture/Active-Directory/README.md:1: trailing whitespace.
-[32m+[m[32m# Active Directory[m[41m[m
-docs/02-Architecture/Apache/01-Justification-de-l-outil.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification de l'outil[m[41m[m
-docs/02-Architecture/Apache/02-Identification-des-actifs.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Identification des actifs[m[41m[m
-docs/02-Architecture/Apache/03-Analyse-des-risques.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Analyse des risques[m[41m[m
-docs/02-Architecture/Apache/04-Surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Surface d'attaque[m[41m[m
-docs/02-Architecture/Apache/05-Evenements-observables.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Événements observables[m[41m[m
-docs/02-Architecture/Apache/06-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Événements observables[m[41m[m
-docs/02-Architecture/Apache/07-References.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Références[m[41m[m
-docs/02-Architecture/Apache/README.md:1: trailing whitespace.
-[32m+[m[32m# Apache HTTP Server[m[41m[m
-docs/02-Architecture/Debian/01-Vue-d-ensemble.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Vue d'ensemble[m[41m[m
-docs/02-Architecture/Debian/02-Role-dans-le-laboratoire.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Rôle dans le laboratoire[m[41m[m
-docs/02-Architecture/Debian/03-Installation-et-configuration.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Installation et configuration[m[41m[m
-docs/02-Architecture/Debian/04-Systeme-de-fichiers.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Système de fichiers[m[41m[m
-docs/02-Architecture/Debian/05-Reseau.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Réseau[m[41m[m
-docs/02-Architecture/Debian/06-Services-et-processus.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Services et processus[m[41m[m
-docs/02-Architecture/Debian/07-Journalisation-et-supervision.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Journalisation et supervision[m[41m[m
-docs/02-Architecture/Debian/08-Mises-a-jour-et-gestion-des-vulnerabilites.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Mises à jour et gestion des vulnérabilités[m[41m[m
-docs/02-Architecture/Debian/09-Sauvegardes.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Sauvegardes[m[41m[m
-docs/02-Architecture/Debian/10-Exploitation-et-diagnostic.md:1: trailing whitespace.
-[32m+[m[32m# 10 - Exploitation et diagnostic[m[41m[m
-docs/02-Architecture/Debian/11-Checklist.md:1: trailing whitespace.
-[32m+[m[32m# 11 - Checklist[m[41m[m
-docs/02-Architecture/Debian/README.md:1: trailing whitespace.
-[32m+[m[32m# README - Architecture Debian[m[41m[m
-docs/02-Architecture/GLPI/01-Justification-de-l-outil.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification de l'outil[m[41m[m
-docs/02-Architecture/GLPI/02-Identification-des-actifs.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Identification des actifs[m[41m[m
-docs/02-Architecture/GLPI/03-Analyse-des-risques.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Analyse des risques[m[41m[m
-docs/02-Architecture/GLPI/04-Surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Surface d'attaque[m[41m[m
-docs/02-Architecture/GLPI/05-Evenements-observables.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Événements observables[m[41m[m
-docs/02-Architecture/GLPI/06-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Justification des décisions[m[41m[m
-docs/02-Architecture/GLPI/07-References.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Références[m[41m[m
-docs/02-Architecture/GLPI/README.md:1: trailing whitespace.
-[32m+[m[32m# GLPI01[m[41m[m
-docs/02-Architecture/MariaDB/01-Justification-de-l-outil.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification de l'outil[m[41m[m
-docs/02-Architecture/MariaDB/02-Identification-des-actifs.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Identification des actifs[m[41m[m
-docs/02-Architecture/MariaDB/03-Analyse-des-risques.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Analyse des risques[m[41m[m
-docs/02-Architecture/MariaDB/04-Surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Surface d'attaque[m[41m[m
-docs/02-Architecture/MariaDB/05-Evenements-observables.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Événements observables[m[41m[m
-docs/02-Architecture/MariaDB/06-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Justification des décisions[m[41m[m
-docs/02-Architecture/MariaDB/07-References.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Références[m[41m[m
-docs/02-Architecture/MariaDB/README.md:1: trailing whitespace.
-[32m+[m[32m# MariaDB[m[41m[m
-docs/02-Architecture/Proxmox-VE/01-Vue-d-ensemble.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Vue d'ensemble[m[41m[m
-docs/02-Architecture/Proxmox-VE/02-Nodes-et-cluster.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Nœuds et cluster[m[41m[m
-docs/02-Architecture/Proxmox-VE/03-Reseau.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Réseau[m[41m[m
-docs/02-Architecture/Proxmox-VE/04-Stockage.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Stockage[m[41m[m
-docs/02-Architecture/Proxmox-VE/05-Machines-virtuelles.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Machines virtuelles[m[41m[m
-docs/02-Architecture/Proxmox-VE/08-Criticite-et-dependances.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Criticité et dépendances[m[41m[m
-docs/02-Architecture/Proxmox-VE/09-Evolution-de-l-architecture.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Évolution de l'architecture[m[41m[m
-docs/02-Architecture/Proxmox-VE/10-Exploitation-et-diagnostic.md:1: trailing whitespace.
-[32m+[m[32m# 10 - Exploitation et diagnostic[m[41m[m
-docs/02-Architecture/Proxmox-VE/11-Checklist.md:1: trailing whitespace.
-[32m+[m[32m# 11 - Checklist[m[41m[m
-docs/02-Architecture/Proxmox-VE/README.md:1: trailing whitespace.
-[32m+[m[32m# README - Architecture Proxmox[m[41m[m
-docs/02-Architecture/Zabbix/01-Justification-de-l-outil.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification de l'outil[m[41m[m
-docs/02-Architecture/Zabbix/02-Identification-des-actifs.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Identification des actifs[m[41m[m
-docs/02-Architecture/Zabbix/03-Analyse-des-risques.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Analyse des risques[m[41m[m
-docs/02-Architecture/Zabbix/04-Surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Surface d'attaque[m[41m[m
-docs/02-Architecture/Zabbix/05-Evenements-observables.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Événements observables[m[41m[m
-docs/02-Architecture/Zabbix/06-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Justification des décisions[m[41m[m
-docs/02-Architecture/Zabbix/07-References.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Références[m[41m[m
-docs/02-Architecture/Zabbix/README.md:1: trailing whitespace.
-[32m+[m[32m# ZABBIX01[m[41m[m
-docs/03-Hardening/Active-Directory/01-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification des décisions[m[41m[m
-docs/03-Hardening/Active-Directory/02-Gestion-des-comptes.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Gestion des comptes[m[41m[m
-docs/03-Hardening/Active-Directory/03-Authentification.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Authentification[m[41m[m
-docs/03-Hardening/Active-Directory/04-Reduction-de-la-surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Réduction de la surface d'attaque[m[41m[m
-docs/03-Hardening/Active-Directory/05-Protection-des-donnees.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Protection des données[m[41m[m
-docs/03-Hardening/Active-Directory/06-Journalisation.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Journalisation[m[41m[m
-docs/03-Hardening/Active-Directory/07-Mises-a-jour-et-gestion-des-vulnerabilites.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Mises à jour et gestion des vulnérabilités[m[41m[m
-docs/03-Hardening/Active-Directory/08-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/Active-Directory/09-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/Apache/01-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification des décisions[m[41m[m
-docs/03-Hardening/Apache/02-Gestion-des-comptes.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Gestion des comptes[m[41m[m
-docs/03-Hardening/Apache/03-TLS-HTTPS.md:1: trailing whitespace.
-[32m+[m[32m# 03 - TLS / HTTPS[m[41m[m
-docs/03-Hardening/Apache/04-Reduction-de-la-surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Réduction de la surface d'attaque[m[41m[m
-docs/03-Hardening/Apache/05-Authentification-et-controle-d-acces.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Authentification et contrôle d'accès[m[41m[m
-docs/03-Hardening/Apache/06-Journalisation.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Journalisation[m[41m[m
-docs/03-Hardening/Apache/07-Mises-a-jour-et-gestion-des-vulnerabilites.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Mises à jour et gestion des vulnérabilités[m[41m[m
-docs/03-Hardening/Apache/08-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/Apache/09-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Maintenance[m[41m[m
-docs/03-Hardening/Debian/08-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/GLPI/01-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification des décisions[m[41m[m
-docs/03-Hardening/GLPI/02-Gestion-des-comptes.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Gestion des comptes[m[41m[m
-docs/03-Hardening/GLPI/03-Authentification.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Authentification[m[41m[m
-docs/03-Hardening/GLPI/04-Reduction-de-la-surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Réduction de la surface d'attaque[m[41m[m
-docs/03-Hardening/GLPI/05-Protection-des-donnees.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Protection des données[m[41m[m
-docs/03-Hardening/GLPI/06-Journalisation.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Journalisation[m[41m[m
-docs/03-Hardening/GLPI/07-Mises-a-jour-et-gestion-des-vulnerabilites.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Mises à jour et gestion des vulnérabilités[m[41m[m
-docs/03-Hardening/GLPI/08-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/GLPI/09-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Maintenance[m[41m[m
-docs/03-Hardening/MariaDB/01-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification des décisions[m[41m[m
-docs/03-Hardening/MariaDB/02-Gestion-des-comptes.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Gestion des comptes[m[41m[m
-docs/03-Hardening/MariaDB/03-Authentification.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Authentification[m[41m[m
-docs/03-Hardening/MariaDB/04-Reduction-de-la-surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Réduction de la surface d'attaque[m[41m[m
-docs/03-Hardening/MariaDB/05-Protection-des-donnees.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Protection des données[m[41m[m
-docs/03-Hardening/MariaDB/06-Journalisation.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Journalisation[m[41m[m
-docs/03-Hardening/MariaDB/07-Mises-a-jour-et-gestion-des-vulnerabilites.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Mises à jour et gestion des vulnérabilités[m[41m[m
-docs/03-Hardening/MariaDB/08-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/MariaDB/09-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Maintenance[m[41m[m
-docs/03-Hardening/Proxmox-VE/01-Objectif-du-durcissement.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Objectifs du durcissement[m[41m[m
-docs/03-Hardening/Proxmox-VE/02-Reduction-de-la-surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Réduction de la surface d'attaque[m[41m[m
-docs/03-Hardening/Proxmox-VE/03-Gestion-des-comptes.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Gestion des comptes[m[41m[m
-docs/03-Hardening/Proxmox-VE/04-Durcissement-SSH.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Durcissement SSH[m[41m[m
-docs/03-Hardening/Proxmox-VE/05-Mises-a-jour.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Mises à jour[m[41m[m
-docs/03-Hardening/Proxmox-VE/06-Configuration-systeme.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Configuration système[m[41m[m
-docs/03-Hardening/Proxmox-VE/07-Stockage.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Stockage[m[41m[m
-docs/03-Hardening/Proxmox-VE/08-Reseau.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Réseau[m[41m[m
-docs/03-Hardening/Proxmox-VE/09-Sauvegardes.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Sauvegardes[m[41m[m
-docs/03-Hardening/Proxmox-VE/10-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 10 - Supervision[m[41m[m
-docs/03-Hardening/Proxmox-VE/11-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# 11 - Maintenance[m[41m[m
-docs/03-Hardening/Ubuntu/02-AppArmor.md:1: trailing whitespace.
-[32m+[m[32m# 02 - AppArmor[m[41m[m
-docs/03-Hardening/Ubuntu/05-Specificites-Ubuntu-24.04.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Spécificités Ubuntu 24.04[m[41m[m
-docs/03-Hardening/Zabbix/01-Justification-des-decisions.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Justification des décisions[m[41m[m
-docs/03-Hardening/Zabbix/02-Gestion-des-comptes.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Gestion des comptes[m[41m[m
-docs/03-Hardening/Zabbix/03-Authentification.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Authentification[m[41m[m
-docs/03-Hardening/Zabbix/04-Reduction-de-la-surface-d-attaque.md:1: trailing whitespace.
-[32m+[m[32m# 04 - Réduction de la surface d'attaque[m[41m[m
-docs/03-Hardening/Zabbix/05-Protection-des-donnees.md:1: trailing whitespace.
-[32m+[m[32m# 05 - Protection des données[m[41m[m
-docs/03-Hardening/Zabbix/06-Journalisation.md:1: trailing whitespace.
-[32m+[m[32m# 06 - Journalisation[m[41m[m
-docs/03-Hardening/Zabbix/07-Mises-a-jour-et-gestion-des-vulnerabilites.md:1: trailing whitespace.
-[32m+[m[32m# 07 - Mises à jour et gestion des vulnérabilités[m[41m[m
-docs/03-Hardening/Zabbix/08-Supervision.md:1: trailing whitespace.
-[32m+[m[32m# 08 - Supervision[m[41m[m
-docs/03-Hardening/Zabbix/09-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# 09 - Maintenance[m[41m[m
-docs/03-Hardening/Zabbix/10-Exploitation-et-diagnostic.md:1: trailing whitespace.
-[32m+[m[32m# 10 - Exploitation et diagnostic[m[41m[m
-docs/04-Protection/Fail2ban/01-Introduction.md:1: trailing whitespace.
-[32m+[m[32m# 01 - Introduction[m[41m[m
-docs/04-Protection/Fail2ban/02-Architecture.md:1: trailing whitespace.
-[32m+[m[32m# 02 - Architecture[m[41m[m
-docs/04-Protection/Fail2ban/03-Installation.md:1: trailing whitespace.
-[32m+[m[32m# 03 - Installation[m[41m[m
-docs/04-Protection/Fail2ban/04-Configuration.md:1: trailing whitespace.
-[32m+[m[32m# Configuration de Fail2ban[m[41m[m
-docs/04-Protection/Fail2ban/06-Jail-Proxmox.md:1: trailing whitespace.
-[32m+[m[32m# Jail Proxmox VE[m[41m[m
-docs/04-Protection/Fail2ban/07-Creation-filtres-personnalises.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/04-Protection/Fail2ban/08-Supervision-Zabbix.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/04-Protection/Fail2ban/09-Maintenance.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/04-Protection/Fail2ban/10-Cycle-de-vie.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/04-Protection/Fail2ban/11-Désinstallation.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/04-Protection/Fail2ban/README.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/98-References/01-Normes-et-referentiels.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/98-References/02-Documentations-officielles.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/98-References/03-Guides-techniques.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/98-References/04-Veille-technologique.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/98-References/05-Criteres-de-selection-des-sources.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/98-References/README.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/99-Project-Management/Architecture-du-depot.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/99-Project-Management/Contribution-Review-Process.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/99-Project-Management/Documentation-Quality-Checklist.md:1: trailing whitespace.
-[32m+[m[32m# Création de filtres personnalisés[m[41m[m
-docs/99-Project-Management/ROADMAP.md:1: trailing whitespace.
-[32m+[m[32m# ROADMAP[m[41m[m
-zabbix/userparameters/AD/ad-monitoring.conf:17: trailing whitespace.
-[32m+[m[32mPour le besoin ici, le nom de domaine utilisé sur mon lab a été remplacé par **domain.local**, le contrôleur de[m[41m [m
