@@ -1,225 +1,223 @@
-# DOC-000 — Charte de rédaction
+Nom du document : Guide de rédaction de la documentation
+Technologie : Markdown
+Catégorie : Documentation
+Objectif : Définir les règles communes de rédaction, de structuration et de validation des documents du projet
+Auteur : Sébastien ALLELY
+Version : 1.0
+Date de dernière modification : 2026-09-12
+
+# Guide de rédaction de la documentation
 
 ## 1. Objectif
 
-Cette charte définit les règles de rédaction applicables à l'ensemble du projet **Cybersecurity Learning Lab**.
+Ce document définit les règles communes applicables à la documentation du projet.
 
-Son objectif est de garantir une documentation :
+L'objectif est de garantir une documentation :
 
-* homogène ;
+* cohérente ;
 * lisible ;
+* techniquement précise ;
+* reproductible ;
 * pédagogique ;
-* techniquement exacte ;
-* facilement maintenable.
+* maintenable dans le temps.
 
-Tous les nouveaux documents devront respecter cette charte.
+La documentation doit permettre à un lecteur de comprendre non seulement **comment** une solution est mise en œuvre, mais également **pourquoi** elle a été choisie.
 
----
+## 2. Structure d'un document
 
-# 2. Langue
+Chaque document doit présenter une structure adaptée à son objectif.
 
-La langue officielle du projet est le **français**.
+Lorsque cela est pertinent, l'organisation suivante est privilégiée :
 
-Les termes techniques sont conservés en anglais lorsqu'ils constituent la terminologie officielle (Fail2ban, CrowdSec, Zabbix, Trigger, Dashboard, Template, UserParameter, etc.).
+1. Objectif
+2. Contexte
+3. Périmètre
+4. Pré-requis
+5. Description technique
+6. Mise en œuvre
+7. Vérification
+8. Sécurité
+9. Limites
+10. Références
 
----
+Toutes les sections ne sont pas obligatoires. Elles doivent être utilisées uniquement lorsqu'elles apportent une information utile.
 
-# 3. Public visé
+## 3. Métadonnées obligatoires
 
-La documentation s'adresse principalement :
+Chaque document Markdown doit commencer par les sept métadonnées suivantes :
 
-* aux étudiants ;
-* aux administrateurs systèmes ;
-* aux administrateurs systèmes et réseaux ;
-* aux DevSecOps ;
-* aux analystes SOC ;
-* aux personnes souhaitant développer leurs compétences en cybersécurité.
+* **Nom du document**
+* **Technologie**
+* **Catégorie**
+* **Objectif**
+* **Auteur**
+* **Version**
+* **Date de dernière modification**
 
-Les explications doivent permettre une progression sans supposer une expertise préalable sur le composant étudié.
+Ces informations permettent d'identifier rapidement le rôle et le contexte du document.
 
----
+Aucune section supplémentaire dédiée au versionnement n'est nécessaire.
 
-# 4. Style rédactionnel
+## 4. Principes de rédaction
 
-Le style doit être :
+La rédaction doit privilégier :
 
-* clair ;
-* direct ;
-* synthétique ;
-* neutre ;
-* factuel.
+* des phrases courtes ;
+* une information par paragraphe ;
+* des titres explicites ;
+* des listes lorsque plusieurs éléments sont énumérés ;
+* des exemples lorsque ceux-ci facilitent la compréhension ;
+* un vocabulaire technique précis.
 
-Éviter :
+Les affirmations techniques doivent être vérifiables ou accompagnées d'une source lorsque cela est nécessaire.
 
-* les formulations marketing ;
-* les superlatifs ;
-* les jugements de valeur sur les outils ;
-* les opinions non argumentées.
+Les choix d'architecture et de sécurité doivent être justifiés lorsqu'ils ont un impact significatif.
 
-Privilégier les explications basées sur des faits, des référentiels ou des choix d'architecture explicitement justifiés.
+## 5. Explication des termes techniques
 
----
-
-# 5. Référentiels
-
-Chaque affirmation doit appartenir à l'une des catégories suivantes :
-
-## Recommandation officielle
-
-Exemple :
-
-> L'ANSSI recommande...
-
-## Documentation officielle
+Un terme spécialisé doit être expliqué lors de sa première utilisation lorsque le public visé peut ne pas le connaître.
 
 Exemple :
 
-> La documentation officielle de Zabbix indique...
+> Le RPO (*Recovery Point Objective*) définit la quantité maximale de données qu'une organisation accepte de perdre après un incident.
 
-## Choix du projet
+Après cette première définition, l'acronyme peut être utilisé normalement.
+
+Cette règle concerne notamment :
+
+* les acronymes ;
+* les concepts de cybersécurité ;
+* les mécanismes techniques ;
+* les technologies spécifiques ;
+* les termes d'administration système et réseau.
+
+## 6. Commandes et procédures
+
+Les commandes doivent être présentées dans des blocs de code.
+
+Lorsqu'une commande est proposée dans une procédure, son objectif doit être expliqué avant son utilisation.
 
 Exemple :
 
-> Dans cette architecture, le choix retenu est...
+> Cette commande permet de vérifier l'état du service SSH :
 
-Le lecteur doit toujours pouvoir distinguer une recommandation officielle d'un choix spécifique au laboratoire.
+```bash
+systemctl status ssh
+```
 
----
+Les commandes dangereuses ou susceptibles de modifier durablement le système doivent être explicitement identifiées.
 
-# 6. Structure des documents
+Une procédure doit distinguer autant que possible :
 
-Tous les projets techniques respecteront la structure suivante :
+* la commande ;
+* son objectif ;
+* le résultat attendu ;
+* l'interprétation du résultat.
 
-1. Présentation
-2. Public visé
-3. Prérequis
-4. Compétences acquises
-5. Pourquoi ce composant ?
-6. Architecture
-7. Installation
-8. Configuration
-9. Validation
-10. Supervision
-11. Tests
-12. Dépannage
-13. Limites
-14. Aller plus loin
-15. Résumé
-16. Exercices
-17. Références
+## 7. Configuration
 
----
+Les exemples de configuration doivent utiliser des valeurs génériques lorsque les données réelles ne sont pas nécessaires à la compréhension.
 
-# 7. Présentation des commandes
+Les valeurs spécifiques à l'environnement réel ne doivent pas être publiées lorsqu'elles permettent d'identifier l'infrastructure.
 
-Toutes les commandes doivent :
+Les exemples publics doivent privilégier des valeurs telles que :
 
-* être complètes ;
-* être testées sur le laboratoire ;
-* pouvoir être copiées directement ;
-* préciser si elles doivent être exécutées en tant que root ou avec sudo.
+* `192.168.1.0/24` pour un réseau de démonstration ;
+* `PVE1` et `PVE2` pour les nœuds Proxmox ;
+* `AD` pour le contrôleur de domaine ;
+* `GLPI01` pour le serveur GLPI ;
+* `ZABBIX01` pour le serveur Zabbix.
 
-Les commandes incomplètes ou non testées ne doivent pas être publiées.
+## 8. Séparation entre faits, choix et recommandations
 
----
+La documentation doit distinguer trois types d'informations.
 
-# 8. Captures d'écran
+### 8.1 Fait technique
 
-Les captures d'écran ne sont utilisées que lorsqu'elles apportent une réelle valeur pédagogique.
+Information directement observable ou vérifiable dans l'environnement.
 
-Les schémas sont privilégiés dès qu'ils permettent d'expliquer un concept plus clairement.
+Exemple :
 
----
+> Le laboratoire utilise deux nœuds Proxmox.
 
-# 9. Scripts
+### 8.2 Choix d'architecture
 
-Tous les scripts doivent :
+Décision prise dans le cadre du projet et associée à une justification.
 
-* être idempotents lorsque cela est possible ;
-* comporter un en-tête standardisé ;
-* être commentés uniquement lorsque cela améliore réellement la compréhension ;
-* être testés avant publication.
+Exemple :
 
----
+> La supervision est centralisée avec Zabbix afin de disposer d'un point de visibilité commun sur les composants du laboratoire.
 
-# 10. Supervision
+### 8.3 Recommandation
 
-Chaque composant déployé doit répondre aux questions suivantes :
+Bonne pratique ou amélioration qui n'est pas nécessairement déployée dans l'environnement actuel.
 
-* Comment vérifier qu'il fonctionne ?
-* Comment détecter une panne ?
-* Comment être alerté ?
-* Quels indicateurs surveiller ?
+Exemple :
 
-Lorsqu'un composant est compatible avec Zabbix, un chapitre dédié à la supervision est attendu.
+> Une architecture comportant plusieurs contrôleurs de domaine permettrait de réduire le risque associé à la perte du contrôleur de domaine unique.
 
----
+Cette distinction évite de présenter une recommandation comme une fonctionnalité réellement déployée.
 
-# 11. Limites
+## 9. Approche sécurité
 
-Chaque document doit présenter les limites de la solution étudiée.
+Lorsque cela est pertinent, les documents doivent présenter les mécanismes de sécurité sous plusieurs angles.
 
-Exemples :
+### Blue Team
 
-* menaces non couvertes ;
-* faux positifs possibles ;
-* impacts sur les performances ;
-* cas où une autre solution est préférable.
+Le *Blue Team* représente les activités défensives : prévention, durcissement, supervision, détection, investigation et réponse à incident.
 
-Aucun outil ne doit être présenté comme une solution universelle.
+### Red Team
 
----
+Le *Red Team* représente les activités offensives ou de simulation d'attaque permettant d'évaluer la résistance du système.
 
-# 12. Sources
+La documentation doit privilégier une approche contrôlée et pédagogique pour les tests offensifs.
 
-Les sources doivent être :
+## 10. Références
 
-* officielles lorsque cela est possible ;
-* récentes ;
-* reconnues par la communauté.
+## 10. Références
 
-Les principaux référentiels utilisés dans le projet sont :
+Les informations techniques importantes doivent être confrontées à des sources fiables et adaptées au sujet traité.
 
-* ANSSI ;
-* NIST ;
-* OWASP ;
-* MITRE ATT&CK ;
-* SOCLE de Stéphane Robert ;
-* IT-Connect (Florian Burnel).
+Les sources privilégiées sont notamment :
 
-Les sources sont systématiquement citées. Les contenus sont reformulés et ne doivent pas être reproduits intégralement.
+* **ANSSI** : recommandations et référentiels de cybersécurité ;
+* **NIST** : normes, publications et cadres méthodologiques ;
+* **OWASP** : sécurité des applications et bonnes pratiques ;
+* **MITRE ATT&CK** : référentiel de connaissances sur les tactiques et techniques d'attaque ;
+* **SOCLE de Stéphane Robert** : guide technique et référence d'implémentation pour les mesures de sécurité et de durcissement lorsqu'il propose une mesure applicable au laboratoire ;
+* **documentations officielles des éditeurs** : installation, configuration, fonctionnement et recommandations propres aux technologies utilisées ;
+* **guides techniques reconnus** : compléments pratiques lorsque les sources précédentes ne couvrent pas suffisamment le sujet.
 
----
+Le **SOCLE de Stéphane Robert** est utilisé comme **référence technique d'implémentation**. Il ne constitue pas un référentiel normatif et ne doit pas être présenté comme tel.
 
-# 13. Philosophie pédagogique
+Une référence doit permettre au lecteur de retrouver la source utilisée.
 
-Le projet privilégie l'apprentissage par la compréhension.
+Les sources doivent être sélectionnées selon leur :
 
-Chaque module doit permettre au lecteur de répondre à quatre questions :
+* autorité ;
+* actualité ;
+* pertinence ;
+* précision ;
+* adéquation avec le sujet traité.
 
-* Pourquoi ce composant existe-t-il ?
-* Quel problème résout-il ?
-* Comment le mettre en œuvre ?
-* Comment démontrer qu'il fonctionne ?
+Lorsqu'une mesure de sécurité ou de durcissement est directement issue du SOCLE de Stéphane Robert, celui-ci doit être explicitement cité dans le document concerné.
 
-L'objectif n'est pas de reproduire des commandes, mais de développer une démarche d'analyse et de justification des choix techniques.
 
----
+## 11. Anonymisation
 
-# 14. Critères de publication
+La documentation destinée à être publiée ne doit contenir aucune information permettant d'identifier directement l'environnement réel.
 
-Un document est considéré comme publiable uniquement si :
+Sont notamment concernés :
 
-* son contenu a été relu ;
-* les commandes ont été testées ;
-* les références ont été vérifiées ;
-* les limites sont documentées ;
-* la supervision est décrite lorsqu'elle est applicable.
+* adresses IP réelles ;
+* noms de domaine internes ;
+* noms d'hôtes réels ;
+* noms d'utilisateurs ;
+* comptes de service ;
+* chemins de fichiers spécifiques ;
+* noms de partages ;
+* identifiants ;
+* informations personnelles ;
+* informations permettant d'identifier l'organisation ou l'infrastructure.
 
----
-
-# 15. Amélioration continue
-
-Cette charte est un document vivant.
-
-Toute évolution devra améliorer la qualité pédagogique, technique ou documentaire du projet sans remettre en cause les principes fondateurs définis dans le PROJECT_CHARTER.
+Les valeurs génériques
