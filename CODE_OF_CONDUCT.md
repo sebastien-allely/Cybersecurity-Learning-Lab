@@ -1,5 +1,16 @@
 # Code de conduite
 
+| Élément | Valeur |
+|----------|---------|
+| **Nom du document** | `CODE_OF_CONDUCT.md` |
+| **Technologie** | Markdown |
+| **Catégorie** | Gouvernance du projet |
+| **Objectif** | Définir les règles de comportement et les principes de collaboration au sein du projet |
+| **Auteur** | Sébastien Allely |
+| **Version** | 1.0 |
+| **Date de dernière modification** | 01/08/2026 |
+
+---
 ## Notre engagement
 
 Cybersecurity Learning Lab est un projet ouvert à toutes les personnes souhaitant apprendre, partager ou améliorer leurs compétences en cybersécurité défensive.
