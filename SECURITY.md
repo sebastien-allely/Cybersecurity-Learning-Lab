@@ -1,5 +1,16 @@
 # Politique de sécurité
 
+| Élément | Valeur |
+|----------|---------|
+| **Nom du document** | `SECURITY.md` |
+| **Technologie** | Markdown |
+| **Catégorie** | Sécurité du projet |
+| **Objectif** | Définir la politique de sécurité du projet et les modalités de signalement des vulnérabilités |
+| **Auteur** | Sébastien Allely |
+| **Version** | 1.0 |
+| **Date de dernière modification** | 01/08/2026 |
+
+---
 ## Objectif
 
 La sécurité est au cœur de Cybersecurity Learning Lab.
@@ -50,7 +61,7 @@ Cette politique concerne uniquement :
 * les configurations proposées ;
 * la documentation publiée.
 
-Elle ne concerne pas les logiciels tiers (Proxmox VE, Zabbix, GLPI, Fail2ban, CrowdSec, ClamAV, etc.), dont les vulnérabilités doivent être signalées à leurs éditeurs respectifs.
+Elle ne concerne pas les logiciels tiers (Proxmox VE, ZABBIX01, GLPI01, Fail2ban, CrowdSec, ClamAV, etc.), dont les vulnérabilités doivent être signalées à leurs éditeurs respectifs.
 
 ---
 
