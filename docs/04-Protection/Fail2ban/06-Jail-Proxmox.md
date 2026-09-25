@@ -107,7 +107,7 @@ Le filtre repose sur l'analyse des messages générés par Proxmox lors d'un éc
 Exemple d'événement détecté :
 
 ```text
-pvedaemon[1208]: authentication failure; rhost=::ffff:192.168.1.8 user=seb@pam msg=no such user ('seb@pam')
+pvedaemon[1208]: authentication failure; rhost=::ffff:192.168.1.8 user=user@pam msg=no such user ('user@pam')
 ```
 
 L'expression :
@@ -427,7 +427,7 @@ Exemple :
 
 ```text
 Utilisateur :
-seb@pam
+user@pam
 
 Mot de passe :
 motdepasse_incorrect
@@ -452,7 +452,7 @@ journalctl -u pvedaemon --since "5 minutes ago"
 Un événement similaire doit apparaître :
 
 ```text
-pvedaemon[xxxx]: authentication failure; rhost=::ffff:192.168.1.xxx user=seb@pam msg=no such user
+pvedaemon[xxxx]: authentication failure; rhost=::ffff:192.168.1.xxx user=user@pam msg=no such user
 ```
 
 L'adresse IP source doit correspondre à la machine ayant réalisé le test.

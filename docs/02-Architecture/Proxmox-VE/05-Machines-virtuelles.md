@@ -58,14 +58,9 @@ Les détails de ces composants sont documentés dans leurs référentiels respec
 
 ---
 
-## SRV-WIN
+## DOCKER01
 
-`SRV-WIN` fournit un environnement Windows utilisé notamment pour l'administration, les tests et les exercices du laboratoire.
-
----
-
-
-`SRV-DOCKER` est destiné aux services et expérimentations nécessitant cet environnement.
+`DOCKER01` est destiné aux services et expérimentations nécessitant cet environnement.
 
 Les détails de Docker ne sont pas traités dans le présent document.
 
@@ -76,10 +71,11 @@ Les détails de Docker ne sont pas traités dans le présent document.
 ```text
 PVE1
  ├── ZABBIX01
+ └── DOCKER01
 
 PVE2
  ├── AD01
- ├── SRV-WIN
+
  └── GLPI01
 ```
 

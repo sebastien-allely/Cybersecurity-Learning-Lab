@@ -8,14 +8,14 @@
 | **Objectif** | Présenter et documenter les éléments nécessaires à la compréhension du sujet traité par ce document dans le référentiel Cybersecurity-Learning-Lab. |
 | **Auteur** | Sébastien Allely |
 | **Version** | 1.0 |
-| **Date de dernière modification** | 01/08/2026 |
+| **Date de dernière modification** | 21/09/2026 |
 
 
 ---
 
 # Mise en œuvre dans le laboratoire
 
-Le laboratoire utilise **ZABBIX01 Agent 2** pour superviser les machines Linux.
+Le laboratoire utilise **ZABBIX Agent 2** pour superviser les machines Linux.
 
 Les éléments spécifiques sont organisés dans :
 

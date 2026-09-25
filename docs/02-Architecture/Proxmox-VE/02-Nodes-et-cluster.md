@@ -14,8 +14,8 @@
 Machines virtuelles principales :
 
 * `AD01`
-* `SRV-WIN`
 * `GLPI01`
+* `ZABBIX01`
 
 ---
 

@@ -1,4 +1,4 @@
-# 11 - Checklist de validation
+# 13 - Checklist de validation
 
 | Élément                           | Valeur                                                                                                                 |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -9,6 +9,15 @@
 | **Auteur**                        | Sébastien Allely                                                                                                       |
 | **Version**                       | 1.0                                                                                                                    |
 | **Date de dernière modification** | 02/08/2026                                                                                                             |
+
+---
+
+> **Utilisation pédagogique**
+>
+> Cette checklist constitue un support de contrôle destiné à l'apprenant.
+> Les cases sont volontairement laissées non cochées et doivent être renseignées lors de la réalisation du contrôle.
+>
+> Une case cochée signifie que le contrôle a été effectivement réalisé et ne constitue pas, à elle seule, une preuve de conformité permanente.
 
 ---
 

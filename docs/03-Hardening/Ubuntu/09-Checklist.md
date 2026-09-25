@@ -12,6 +12,15 @@
 
 ---
 
+> **Utilisation pédagogique**
+>
+> Cette checklist constitue un support de contrôle destiné à l'apprenant.
+> Les cases sont volontairement laissées non cochées et doivent être renseignées lors de la réalisation du contrôle.
+>
+> Une case cochée signifie que le contrôle a été effectivement réalisé et ne constitue pas, à elle seule, une preuve de conformité permanente.
+
+---
+
 ## 1. Identification
 
 * [ ] Version Ubuntu identifiée.
