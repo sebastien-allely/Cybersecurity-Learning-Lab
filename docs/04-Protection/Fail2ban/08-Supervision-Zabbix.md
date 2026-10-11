@@ -64,5 +64,5 @@ Pour revenir en arrière, désactiver les éléments ou déclencheurs introduits
 ## 7. Références
 
 - [Zabbix — Documentation](https://www.zabbix.com/documentation/current/en/manual)
-- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2ban — Documentation du projet](https://github.com/fail2ban/fail2ban/wiki)
 - [Debian — Documentation](https://www.debian.org/doc/)
