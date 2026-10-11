@@ -4,75 +4,73 @@
 |---|---|
 | **Nom du document** | `10-Cycle-de-vie.md` |
 | **Technologie** | Fail2ban |
-| **Catégorie** | Cycle de vie et gestion des changements |
-| **Objectif** | Décrire les étapes de décision, de mise en œuvre, de validation et de retrait d'une configuration Fail2ban. |
+| **Catégorie** | Gestion du cycle de vie |
+| **Objectif** | Décrire les étapes de conception, validation, exploitation, évolution et retrait d'une protection Fail2ban. |
 | **Auteur** | Sébastien Allely |
 | **Version** | 1.1 |
 | **Date de dernière modification** | 11/10/2026 |
 
 ## 1. Objectif
 
-Ce document définit un cycle de vie pour toute nouvelle jail, tout filtre personnalisé et toute modification importante de Fail2ban. L'objectif est d'éviter l'ajout de règles sans besoin démontré et de rendre les changements traçables.
+Le cycle de vie formalise la gestion d'une jail ou d'un filtre, depuis le besoin initial jusqu'au retrait. Il évite que des règles sans propriétaire, non testées ou devenues inutiles restent actives.
 
-## 2. Étapes du cycle de vie
+## 2. Étapes
 
 ### 2.1 Besoin et analyse
 
-- Décrire le service et l'actif à protéger.
-- Identifier la menace ou le scénario de risque.
-- Vérifier si les contrôles existants répondent déjà au besoin.
-- Définir les effets attendus, les faux positifs acceptables et les limites.
+- Décrire le service et les journaux disponibles.
+- Identifier le comportement à détecter et le risque ciblé.
+- Vérifier si un filtre fourni par le projet ou la distribution répond déjà au besoin.
+- Définir les impacts possibles des faux positifs et les moyens d'accès de secours.
 
 ### 2.2 Conception
 
-- Choisir un filtre et un backend adaptés aux journaux disponibles.
-- Définir les paramètres de la jail et l'action de bannissement.
-- Vérifier les interactions avec le pare-feu, les accès d'administration et les autres outils de sécurité.
-- Définir les critères de réussite et de retour arrière.
+- Choisir le filtre, les paramètres de jail et l'action de réponse.
+- Justifier les seuils et les durées selon le contexte.
+- Limiter les exclusions à ce qui est nécessaire.
+- Définir les contrôles de supervision et les critères de réussite.
 
-### 2.3 Implémentation
+### 2.3 Test et validation
 
-- Utiliser des fichiers de configuration locaux et versionnés selon les conventions de la distribution.
-- Limiter la portée de la règle aux services réellement concernés.
-- Documenter les paramètres non évidents et les exceptions.
-- Ne pas copier de secrets, d'adresses réelles ou de journaux identifiants dans le dépôt public.
+- Tester les motifs sur des exemples de journaux représentatifs.
+- Inclure des cas positifs, négatifs et des variations de format.
+- Vérifier que les événements légitimes ne déclenchent pas de bannissement injustifié.
+- Vérifier les droits d'accès, les journaux et l'action de pare-feu.
+- Enregistrer la version, les résultats et les limites connues.
 
-### 2.4 Vérification
+### 2.4 Déploiement
 
-- Tester les motifs positifs et négatifs du filtre.
-- Vérifier le chargement de la jail.
-- Contrôler les journaux et l'absence d'erreurs.
-- Valider la supervision si elle est prévue.
-- Vérifier que les accès légitimes ne sont pas bloqués.
+- Sauvegarder la configuration actuelle.
+- Appliquer la modification dans une fenêtre adaptée.
+- Valider la configuration et le service.
+- Confirmer la présence de la jail attendue et le fonctionnement de la supervision.
+- Documenter le changement et son responsable.
 
-### 2.5 Exploitation et revue
+### 2.5 Exploitation et réévaluation
 
-- Surveiller les erreurs, les bannissements et les faux positifs.
-- Réévaluer les seuils et exclusions à partir des événements observés.
-- Revoir la règle après un changement de service, de journalisation ou de distribution.
-- Documenter les écarts et les actions correctives.
+Revoir les règles après changement du service, des formats de journaux, du système, du pare-feu ou des versions. Analyser les faux positifs et confirmer que la protection répond toujours au besoin.
 
 ### 2.6 Retrait
 
-Une règle peut être retirée si le service n'existe plus, si le besoin a disparu ou si une solution mieux adaptée la remplace. Le retrait doit être approuvé, documenté et suivi d'une vérification de la protection restante.
+Désactiver la jail ou le filtre selon une procédure contrôlée, confirmer qu'aucune autre jail ne dépend du composant et retirer uniquement les fichiers et droits devenus inutiles. Contrôler les règles de pare-feu résiduelles et mettre à jour la documentation.
 
-## 3. Critères d'acceptation
+## 3. Critères de décision
 
-Une modification n'est considérée comme validée que si :
-- le besoin et le risque sont documentés ;
-- le filtre et la configuration ont été testés ;
-- la jail attendue est chargée ;
-- aucun blocage injustifié n'est constaté lors des tests définis ;
-- la supervision et les journaux sont cohérents ;
-- le retour arrière est réalisable ;
-- la documentation et les références sont à jour.
+| Décision | Critères indicatifs |
+|---|---|
+| Conserver | Besoin toujours présent, comportement compris, tests concluants |
+| Corriger | Besoin valable mais couverture ou comportement insuffisant |
+| Remplacer | Une solution mieux maintenue ou plus adaptée existe |
+| Retirer | Service supprimé, risque traité autrement ou règle devenue inutile |
 
-## 4. Traçabilité
+La décision doit être fondée sur le risque et les preuves disponibles, et non uniquement sur l'ancienneté d'une règle.
 
-Conserver dans la documentation de changement : objectif, actifs concernés, fichiers modifiés, date, version, tests exécutés, résultat, risques résiduels, responsable de validation et référence à la Pull Request. Ne pas enregistrer d'informations sensibles dans les journaux de changement publics.
+## 4. Traçabilité minimale
+
+Conserver l'identifiant de la règle, le service concerné, le risque ciblé, le propriétaire, les fichiers modifiés, les tests, les résultats, la date de révision et la justification de toute exception.
 
 ## 5. Références
 
-- [Fail2ban — Documentation](https://www.fail2ban.org/wiki/index.php/Main_Page)
-- [NIST SP 800-128 — Configuration Management](https://csrc.nist.gov/pubs/sp/800/128/upd1/final)
+- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+- [ANSSI — Publications](https://cyber.gouv.fr/publications)
