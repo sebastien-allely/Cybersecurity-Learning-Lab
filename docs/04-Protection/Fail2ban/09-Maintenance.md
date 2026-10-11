@@ -64,6 +64,6 @@ La restauration d'une configuration ne garantit pas l'annulation de toutes les a
 
 ## 7. Références
 
-- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2ban — Documentation du projet](https://github.com/fail2ban/fail2ban/wiki)
 - [Debian — Documentation](https://www.debian.org/doc/)
 - [Ubuntu Server — Documentation](https://documentation.ubuntu.com/server/)
