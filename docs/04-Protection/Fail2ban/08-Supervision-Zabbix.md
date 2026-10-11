@@ -10,79 +10,59 @@
 | **Version** | 1.1 |
 | **Date de dernière modification** | 11/10/2026 |
 
-## 1. Objectif
+## 1. Objectif et périmètre
 
-La supervision doit détecter une indisponibilité de Fail2ban, une jail attendue absente ou une anomalie de fonctionnement. Elle complète les contrôles de sécurité et ne remplace pas l'analyse des journaux.
+La supervision vise à détecter une indisponibilité de Fail2ban, une perte de fonctionnement des jails attendues ou une anomalie dans les journaux utiles. Elle complète les contrôles du système et du pare-feu ; elle ne garantit pas à elle seule l'efficacité des filtres ni l'absence d'attaque.
+
+Le mode de collecte (agent, vérifications actives ou passives, journalisation) doit être choisi selon l'architecture et la version de Zabbix déployées.
 
 ## 2. Prérequis
 
-- Fail2ban installé et configuré sur l'hôte supervisé.
-- Zabbix Agent 2 opérationnel et autorisé à communiquer avec le serveur ou le proxy Zabbix.
-- Accès de lecture aux états nécessaires, sans octroyer de privilèges administratifs généraux à l'agent.
-- Liste documentée des jails attendues pour l'hôte concerné.
+- Zabbix Agent 2 ou une méthode de collecte explicitement retenue est installé et fonctionnel.
+- Les droits de collecte sont limités aux commandes et fichiers nécessaires.
+- La liste des jails attendues et leur objectif sont documentés.
+- Les journaux ne contiennent pas de secrets et leur accès est contrôlé.
+- Les contrôles sont testés en préproduction ou sur un hôte de laboratoire.
 
-## 3. Contrôles à envisager
+## 3. Contrôles recommandés
 
-| Contrôle | Objectif | Limite |
+| Contrôle | Finalité | Limite |
 |---|---|---|
-| État du service | Détecter un service arrêté ou en échec | Un service actif ne prouve pas que les filtres détectent correctement les événements |
-| État des jails | Vérifier la présence des jails attendues | La liste dépend du rôle de l'hôte |
-| État du processus | Détecter une anomalie de processus | Indicateur complémentaire |
-| Journaux Fail2ban | Détecter erreurs de configuration et d'exécution | Nécessite une collecte adaptée |
-| Événements de bannissement | Observer l'activité et ses variations | Une hausse ou une baisse n'est pas automatiquement un incident |
+| État du service Fail2ban | Détecter un arrêt ou un échec de démarrage | Un service actif ne prouve pas que toutes les jails fonctionnent |
+| Présence des jails attendues | Repérer une jail désactivée ou absente | La liste doit être maintenue après chaque changement |
+| État des jails et compteurs | Repérer des changements anormaux ou une absence de données | Les valeurs doivent être interprétées dans le contexte des journaux |
+| Erreurs récentes du service | Détecter une erreur de configuration ou d'accès aux journaux | Les motifs dépendent de la distribution et de la version |
+| Fonctionnement de l'agent Zabbix | Distinguer un problème de collecte d'une panne de Fail2ban | La disponibilité de l'agent ne garantit pas la validité des données |
 
-## 4. Vérifications locales
+## 4. Déploiement des contrôles
 
-Afficher l'état du service :
+1. Définir les éléments et déclencheurs requis dans le modèle Zabbix adapté à la version utilisée.
+2. Limiter les commandes privilégiées à une liste explicite ; ne pas autoriser un accès root générique à l'agent.
+3. Tester la collecte avec une jail existante et vérifier les cas de service arrêté, jail absente et collecte en erreur.
+4. Définir des seuils et fenêtres de détection cohérents avec l'usage du serveur.
+5. Documenter les dépendances entre les déclencheurs afin d'éviter les alertes en cascade lors d'une panne de l'agent.
 
-```bash
-sudo systemctl status fail2ban --no-pager
-```
+Aucun UserParameter n'est fourni comme prêt à déployer dans ce document : sa commande, ses droits, son format de sortie et son comportement en erreur doivent être définis puis testés avant publication d'une configuration exécutable.
 
-**Objectif :** vérifier l'état rapporté par systemd. Un service actif est un premier indicateur, pas une validation complète.
+## 5. Vérification et interprétation
 
-Afficher les jails chargées :
+Une validation complète doit démontrer que :
+- l'état du service est correctement détecté ;
+- une jail attendue absente génère le résultat prévu ;
+- les erreurs de collecte sont visibles et distinctes des états fonctionnels ;
+- les valeurs remontées correspondent à l'état observé localement ;
+- une panne de l'agent ne produit pas de fausses conclusions sur Fail2ban.
 
-```bash
-sudo fail2ban-client status
-```
+Conserver les résultats de test dans la documentation interne du laboratoire sans publier les noms d'hôtes, adresses ou journaux privés.
 
-**Résultat attendu :** une réponse indiquant les jails actuellement chargées. Comparer la liste à l'inventaire attendu.
+## 6. Risques et retour arrière
 
-Afficher les détails d'une jail précise :
+Une mauvaise règle de détection peut produire des alertes inutiles ou masquer un défaut réel. Une commande privilégiée mal conçue peut élargir les droits de l'agent. Valider les permissions et les scénarios d'erreur avant activation.
 
-```bash
-sudo fail2ban-client status sshd
-```
+Pour revenir en arrière, désactiver les éléments ou déclencheurs introduits et retirer les droits de collecte spécifiques après vérification qu'ils ne sont pas partagés avec d'autres contrôles. Ne pas supprimer une règle sudo ou un paramètre commun sans vérifier ses dépendances.
 
-**Objectif :** examiner la jail `sshd` si elle existe sur cet hôte. Remplacer ce nom par une jail réellement configurée ; une jail absente peut renvoyer une erreur.
+## 7. Références
 
-## 5. Intégration Zabbix
-
-Avant d'ajouter un item, un trigger ou une règle de découverte :
-1. vérifier les items, triggers, tags, dépendances et templates déjà associés à l'hôte ;
-2. rechercher si un contrôle équivalent existe ;
-3. définir le type d'item, l'intervalle, la valeur de référence et le comportement en cas de donnée inconnue ;
-4. limiter les droits de l'agent à la lecture strictement nécessaire ;
-5. tester le contrôle et les cas de panne avant de l'activer à grande échelle.
-
-Ne pas supposer qu'un template Fail2ban natif est présent. L'implémentation dépend de la version Zabbix, de la configuration de l'agent et du mécanisme de collecte retenu. Éviter les appels arbitraires à `sudo` depuis l'agent ; si un UserParameter est nécessaire, il doit être fixe, borné, documenté et testé.
-
-## 6. Alertes et interprétation
-
-Les alertes doivent distinguer le service indisponible, une jail attendue absente, une erreur de collecte et une activité de bannissement inhabituelle. Une absence de bannissements ne prouve pas l'absence d'attaques. Une activité élevée peut provenir d'un scan, d'une erreur de configuration ou d'un client légitime mal configuré.
-
-## 7. Validation
-
-- Vérifier le service et les jails localement.
-- Vérifier que Zabbix reçoit des valeurs récentes et cohérentes.
-- Simuler uniquement dans un environnement de test contrôlé les états dégradés pertinents.
-- Confirmer que les triggers se déclenchent et se rétablissent selon les critères définis.
-- Documenter les résultats, faux positifs et limites.
-
-## 8. Références
-
-- [Fail2ban — Documentation](https://www.fail2ban.org/wiki/index.php/Main_Page)
 - [Zabbix — Documentation](https://www.zabbix.com/documentation/current/en/manual)
-- [Zabbix — Agent 2](https://www.zabbix.com/documentation/current/en/manual/concepts/agent2)
-- [MITRE ATT&CK — Brute Force (T1110)](https://attack.mitre.org/techniques/T1110/)
+- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Debian — Documentation](https://www.debian.org/doc/)
