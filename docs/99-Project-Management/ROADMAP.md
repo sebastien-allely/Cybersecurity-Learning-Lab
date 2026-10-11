@@ -266,7 +266,7 @@ Les statuts de cette section décrivent le cadrage au moment de la rédaction. U
 - [ ] Étudier et planifier le déploiement d'OPNsense et la segmentation réseau.
 - [ ] Construire des règles inter-zones explicites selon le moindre privilège.
 - [ ] Documenter les accès d'administration et le chemin de secours avant toute restriction.
-- [ ] Définir une politique IPv6 cohérente avec l'architecture ; vérifier sa mise en œuvre sur les systèmes, interfaces, services et règles de filtrage concernés.
+- [ ] Planifier et vérifier la désactivation d'IPv6 sur les systèmes et équipements concernés, y compris interfaces, services et filtrage ; identifier et traiter les dépendances avant de retirer le protocole.
 - [ ] Évaluer l'intérêt et le périmètre d'une détection réseau IDS/IPS sans l'activer sans tests préalables.
 
 **Dépendances :** inventaire des flux, accès de secours et plan de retour arrière avant toute modification de filtrage susceptible de couper l'administration.
