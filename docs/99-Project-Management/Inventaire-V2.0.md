@@ -7,7 +7,7 @@
 | **Catégorie** | Gestion du projet |
 | **Objectif** | Établir un état initial vérifiable des composants, dépendances, écarts et preuves à collecter avant les chantiers de sécurisation de la V2.0. |
 | **Auteur** | Sébastien Allely |
-| **Version** | 0.1 |
+| **Version** | 0.2 |
 | **Date de dernière modification** | 11/10/2026 |
 
 ## 1. Objet et limites
@@ -30,13 +30,13 @@ Les versions exactes, les adresses et les paramètres détaillés sont à releve
 
 ## 3. Inventaire initial des actifs
 
-Les identifiants **ACT-001 à ACT-007 reprennent la nomenclature existante du laboratoire**. Ils ne doivent pas être réattribués à d'autres rôles au seul motif de construire l'inventaire V2.0. Les actifs opérationnels connus sont ACT-001, ACT-002, ACT-004, ACT-005 et ACT-006 ; ACT-003 et ACT-007 sont hors périmètre opérationnel dans l'état historique disponible. Tous ces états doivent être confirmés par une collecte datée avant d'engager un chantier.
+Les identifiants **ACT-001 à ACT-007 reprennent la nomenclature existante du laboratoire**. Ils ne doivent pas être réattribués à d'autres rôles au seul motif de construire l'inventaire V2.0. ACT-007 est hors périmètre opérationnel dans l'état historique disponible ; les statuts d'ACT-003 et d'ACT-004 doivent être confirmés par une collecte datée avant d'engager un chantier.
 
 | Identifiant | Actif / fonction | État connu à la préparation de la V2.0 | Dépendances principales | Vérifications prioritaires |
 |---|---|---|---|---|
 | ACT-001 | Active Directory et DNS associé | **Observé historiquement** — service d'annuaire déployé ; la supervision de services Windows principaux a commencé. Aucun consommateur LDAP n'était identifié lors du dernier contrôle connu ; ce point doit être reconfirmé. LDAPS n'est pas considéré comme validé. | Virtualisation, réseau, DNS, synchronisation horaire, sauvegardes, certificats pour le futur LDAPS | Rôles et services actifs ; clients LDAP réellement configurés ; ports et flux ; état des alertes ; stratégie de récupération ; prérequis et tests des certificats avant toute obligation LDAPS. |
 | ACT-002 | Supervision centralisée Zabbix | **Observé historiquement** — serveur Zabbix déployé ; des éléments de supervision des services AD ont été configurés. L'affichage d'un widget restait à finaliser lors du dernier état connu. | Virtualisation, réseau, base de données, agents, comptes techniques, horloge | Version actuelle ; disponibilité du serveur et des agents ; éléments, déclencheurs, tags, dépendances et tableaux de bord existants ; qualité des alertes ; sauvegarde et restauration de la configuration et de la base. |
-| ACT-003 | Hôte de conteneurs | **Hors périmètre opérationnel selon l'état historique** — l'hôte et son moteur de conteneurs ont été installés, mais la machine était arrêtée/inactive lors du dernier inventaire. Une interface d'administration HTTPS utilisait un certificat autosigné. Ne pas compter cet actif comme opérationnel sans nouvelle preuve. | Virtualisation, réseau, DNS, stockage, gestion des secrets, mises à jour | État réel de la machine ; système et moteur ; conteneurs et images ; ports publiés ; privilèges ; provenance des images ; secrets ; stratégie de mise à jour et de retour arrière ; certificat de l'interface d'administration. |
+| ACT-003 | Hôte de conteneurs | **Observé historiquement** — hôte Linux et moteur de conteneurs présents ; la liste et l'état des conteneurs doivent être réinventoriés. L'interface d'administration HTTPS utilisait un certificat autosigné. Ne pas déduire de cette observation que les conteneurs attendus sont actifs ou à jour. | Virtualisation, réseau, DNS, stockage, gestion des secrets, mises à jour | État réel de la machine ; système et moteur ; conteneurs et images ; ports publiés ; privilèges ; provenance des images ; secrets ; stratégie de mise à jour et de retour arrière ; certificat de l'interface d'administration. |
 | ACT-004 | Gestion de parc et inventaire applicatif GLPI | **Préparé, non validé** — une montée de version a été préparée ; la version effectivement installée après migration et la validation fonctionnelle restent à confirmer. | Système Linux, serveur web, PHP, base de données, sauvegardes, accès d'administration, supervision | Version actuelle ; état de migration de la base ; tests fonctionnels ; plugins ; agents ; permissions ; exposition réseau ; preuve de sauvegarde exploitable et retour arrière. |
 | ACT-005 | Nœud de virtualisation Proxmox VE 1 | **Observé historiquement** — premier nœud du cluster à deux nœuds. Le cluster et son quorum ont été observés ; aucun QDevice n'était en place. | Réseau, stockage, alimentation, accès d'administration, sauvegardes, second nœud | Version et état actuels ; quorum après incidents/redémarrages ; configuration de haute disponibilité ; règles de pare-feu ; accès de secours ; stockage et dépendances des VM. |
 | ACT-006 | Nœud de virtualisation Proxmox VE 2 | **Observé historiquement** — second nœud du cluster à deux nœuds. La virtualisation constitue une dépendance critique des services hébergés. | Réseau, stockage, alimentation, accès d'administration, sauvegardes, premier nœud | Version et état actuels ; quorum après incidents/redémarrages ; configuration de haute disponibilité ; règles de pare-feu ; accès de secours ; stockage et dépendances des VM. |
@@ -112,6 +112,6 @@ La phase V2.0 pourra être considérée comme terminée lorsque :
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 - [NIST SP 800-53 — Security and Privacy Controls](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [ANSSI — Publications](https://cyber.gouv.fr/publications)
-- SOCLE de Stéphane Robert — référence d'implémentation mentionnée dans le manifeste du projet ; ne constitue pas une norme.
+- SOCLE de Stéphane Robert — référence d'implémentation décrite dans le [référentiel des guides techniques](../98-References/03-Guides-techniques.md) ; ne constitue pas une norme.
 - [Documentation officielle Proxmox VE](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/documentation)
 - [Documentation officielle Zabbix](https://www.zabbix.com/documentation/current/en/manual)
