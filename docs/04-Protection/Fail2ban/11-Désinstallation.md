@@ -62,6 +62,6 @@ Le retrait peut être considéré comme terminé lorsque le service est retiré 
 
 ## 7. Références
 
-- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2ban — Documentation du projet](https://github.com/fail2ban/fail2ban/wiki)
 - [Debian — Documentation](https://www.debian.org/doc/)
 - [Ubuntu Server — Documentation](https://documentation.ubuntu.com/server/)
