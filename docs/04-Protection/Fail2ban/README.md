@@ -45,7 +45,7 @@ Les noms de services, les chemins et les paramètres peuvent varier selon la dis
 
 ## Références
 
-- [Fail2ban — Documentation](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2ban — Documentation](https://github.com/fail2ban/fail2ban/wiki)
 - [Debian — Documentation](https://www.debian.org/doc/)
 - [Ubuntu Server — Documentation](https://documentation.ubuntu.com/server/)
 - [Zabbix — Documentation](https://www.zabbix.com/documentation/current/en/manual)
