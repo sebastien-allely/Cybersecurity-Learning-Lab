@@ -20,14 +20,14 @@ Les documentations officielles sont la source prioritaire pour vérifier les par
 |---|---|
 | Debian | [Debian Documentation](https://www.debian.org/doc/) |
 | Ubuntu Server | [Ubuntu Server Documentation](https://documentation.ubuntu.com/server/) |
-| Proxmox VE | [Proxmox VE Documentation](https://pve.proxmox.com/pve-docs/) |
+| Proxmox VE | [Proxmox VE Documentation](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/documentation) |
 | Windows Server | [Microsoft Learn](https://learn.microsoft.com/windows-server/) |
-| Active Directory | [Microsoft Learn — Active Directory Domain Services](https://learn.microsoft.com/windows-server/identity/ad-ds/) |
+| Active Directory | [Microsoft Learn — Active Directory Domain Services](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-domain-services) |
 | Apache HTTP Server | [Apache HTTP Server Documentation](https://httpd.apache.org/docs/) |
-| MariaDB | [MariaDB Documentation](https://mariadb.com/kb/en/documentation/) |
+| MariaDB | [MariaDB Documentation](https://mariadb.com/docs/server) |
 | GLPI | [GLPI Documentation](https://glpi-user-documentation.readthedocs.io/) |
 | Zabbix | [Zabbix Documentation](https://www.zabbix.com/documentation/current/en/manual) |
-| Fail2ban | [Fail2ban project](https://www.fail2ban.org/wiki/index.php/Main_Page) |
+| Fail2ban | [Fail2ban project](https://github.com/fail2ban/fail2ban/wiki) |
 | CrowdSec | [CrowdSec Documentation](https://docs.crowdsec.net/) |
 | Docker | [Docker Documentation](https://docs.docker.com/) |
 | OpenSSH | [OpenSSH Manual Pages](https://www.openssh.com/manual.html) |
