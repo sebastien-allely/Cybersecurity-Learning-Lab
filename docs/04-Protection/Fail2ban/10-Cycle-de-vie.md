@@ -71,6 +71,6 @@ Conserver l'identifiant de la règle, le service concerné, le risque ciblé, le
 
 ## 5. Références
 
-- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2ban — Documentation du projet](https://github.com/fail2ban/fail2ban/wiki)
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 - [ANSSI — Publications](https://cyber.gouv.fr/publications)
