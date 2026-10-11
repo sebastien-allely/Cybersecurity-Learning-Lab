@@ -7,7 +7,7 @@
 | **Catégorie** | Gestion du projet |
 | **Objectif** | Établir un état initial vérifiable des composants, dépendances, écarts et preuves à collecter avant les chantiers de sécurisation de la V2.0. |
 | **Auteur** | Sébastien Allely |
-| **Version** | 0.2 |
+| **Version** | 0.3 |
 | **Date de dernière modification** | 11/10/2026 |
 
 ## 1. Objet et limites
