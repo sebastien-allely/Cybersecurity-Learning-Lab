@@ -5,94 +5,65 @@
 | **Nom du document** | `09-Maintenance.md` |
 | **Technologie** | Fail2ban |
 | **Catégorie** | Maintenance et protection |
-| **Objectif** | Définir les contrôles périodiques et les opérations de maintenance sûres pour Fail2ban. |
+| **Objectif** | Définir les contrôles périodiques permettant de maintenir Fail2ban fonctionnel et adapté aux évolutions du système. |
 | **Auteur** | Sébastien Allely |
 | **Version** | 1.1 |
 | **Date de dernière modification** | 11/10/2026 |
 
 ## 1. Objectif
 
-La maintenance vise à conserver une protection fonctionnelle tout en limitant les régressions, les faux positifs et les interruptions de service.
+La maintenance de Fail2ban doit préserver la disponibilité des services protégés tout en vérifiant que les filtres, jails, journaux et actions restent adaptés. Toute modification est tracée et validée.
 
 ## 2. Prérequis et précautions
 
-- Disposer d'un accès d'administration de secours à l'hôte.
-- Connaître les jails, filtres et actions réellement utilisés.
-- Consulter les journaux et la supervision avant une modification.
-- Sauvegarder les fichiers de configuration concernés avant de les modifier.
-- Planifier les changements susceptibles de bloquer des accès légitimes.
-
-Une règle de bannissement incorrecte peut bloquer l'administration distante. Effectuer les changements depuis une session de secours ou un accès console lorsque c'est possible.
+- Disposer d'un accès d'administration alternatif au service protégé.
+- Connaître les jails activées, leurs fichiers de journal et les actions de bannissement utilisées.
+- Disposer d'une sauvegarde des fichiers de configuration modifiés.
+- Planifier les mises à jour et changements ayant un impact sur l'authentification ou le pare-feu.
+- Ne pas publier de journaux réels ou d'informations identifiantes dans les preuves de test.
 
 ## 3. Contrôles périodiques
 
-| Fréquence indicative | Contrôle |
-|---|---|
-| À chaque changement | Syntaxe, service, jails attendues et tests des filtres modifiés |
-| Régulièrement | État du service, erreurs dans les journaux et état de la supervision |
-| À chaque mise à jour | Notes de version, compatibilité des filtres et actions, validation après mise à jour |
-| Périodiquement | Pertinence des jails, seuils, durées de bannissement et exclusions |
-| Lors d'un incident | Corrélation entre événements, journaux applicatifs, réseau et bannissements |
+| Fréquence indicative | Contrôle | Résultat attendu |
+|---|---|---|
+| Après chaque changement | Validation de la configuration et de l'état du service | Pas d'erreur de syntaxe ; service opérationnel |
+| Régulièrement | Revue des jails, filtres, seuils et exclusions | Chaque règle a un objectif actuel et documenté |
+| Régulièrement | Analyse des journaux et faux positifs | Les événements sont compris ; aucune exclusion injustifiée |
+| À chaque mise à jour | Lecture des notes de version et vérification des changements | Compatibilité confirmée ou plan de correction établi |
+| Périodiquement | Revue des accès d'administration et de la supervision | Accès minimaux ; alertes pertinentes |
+| Après incident | Analyse des bannissements et de l'efficacité de la règle | Décisions et actions correctives tracées |
 
-Adapter la fréquence au niveau de risque et à la criticité de l'hôte ; ce tableau est un point de départ, pas une fréquence réglementaire.
+Les fréquences exactes sont à adapter au niveau de risque, à l'exposition et à la fréquence des changements.
 
-## 4. Contrôles de fonctionnement
+## 4. Mise à jour et changement de configuration
 
-Afficher l'état du service :
+1. Identifier la version installée et les changements disponibles dans la distribution.
+2. Lire les notes de version et identifier les changements de format ou de comportement.
+3. Sauvegarder les fichiers de configuration concernés dans un emplacement protégé.
+4. Appliquer le changement pendant une fenêtre adaptée au risque.
+5. Valider la configuration avec les outils disponibles pour la version installée.
+6. Redémarrer ou recharger le service uniquement selon la procédure supportée.
+7. Vérifier le statut du service, les jails, les journaux, les règles de pare-feu et la supervision.
 
-```bash
-sudo systemctl status fail2ban --no-pager
-```
+Ne pas appliquer une commande de mise à jour universelle sans connaître la distribution, sa politique de paquets et les dépendances locales.
 
-**Interprétation :** rechercher un état actif et l'absence d'erreur récente pertinente. Un service actif ne suffit pas à démontrer l'efficacité des règles.
+## 5. Gestion des faux positifs
 
-Afficher les jails chargées :
+Avant d'ajouter une adresse à une liste d'exclusion, confirmer l'origine du trafic, l'usage légitime et le périmètre de l'exclusion. Préférer une exclusion minimale et temporaire, documentée avec un propriétaire et une date de révision. Une exclusion large peut neutraliser la protection pour une partie importante du réseau.
 
-```bash
-sudo fail2ban-client status
-```
+## 6. Retour arrière
 
-**Interprétation :** comparer la liste obtenue avec l'inventaire attendu pour cet hôte.
+Si un changement entraîne des erreurs ou bloque un accès légitime :
+- utiliser l'accès d'administration de secours ;
+- restaurer les seuls fichiers de configuration concernés depuis la sauvegarde ;
+- vérifier la syntaxe et l'état du service ;
+- vérifier les actions de pare-feu et les jails actives ;
+- documenter la cause et la décision de reprise.
 
-Examiner les journaux du service :
+La restauration d'une configuration ne garantit pas l'annulation de toutes les actions déjà appliquées par le pare-feu. Vérifier l'état effectif des bannissements avant de conclure au retour à la normale.
 
-```bash
-sudo journalctl -u fail2ban --since "24 hours ago" --no-pager
-```
+## 7. Références
 
-**Interprétation :** rechercher les erreurs de chargement, de configuration, de backend ou d'exécution. Adapter la fenêtre de temps au contexte de l'incident.
-
-## 5. Modification d'un filtre ou d'une jail
-
-1. Identifier la raison et le risque traité.
-2. Sauvegarder les fichiers concernés et noter leur état initial.
-3. Vérifier le filtre avec des journaux représentatifs et des cas négatifs.
-4. Examiner la configuration et la disponibilité des jails.
-5. Appliquer le changement dans une fenêtre maîtrisée.
-6. Vérifier le service, les jails, les journaux et les alertes.
-7. Consigner le résultat et la procédure de retour arrière.
-
-Ne pas publier une expression régulière comme validée sans l'avoir testée avec des événements représentatifs. Éviter de modifier les fichiers fournis par le paquet lorsque des fichiers locaux dédiés permettent de conserver les personnalisations.
-
-## 6. Mises à jour
-
-Utiliser le mécanisme de mise à jour documenté pour la distribution et le processus de changement du laboratoire. Avant toute mise à jour, consulter les notes de version et déterminer si les filtres, backends ou actions personnalisés sont concernés.
-
-Ne pas lancer une mise à jour sans sauvegarde, fenêtre de changement, vérification postérieure et accès de secours.
-
-## 7. Retour arrière
-
-Si la modification entraîne une erreur ou bloque un accès légitime :
-- restaurer uniquement les fichiers sauvegardés qui ont été modifiés ;
-- recharger ou redémarrer le service uniquement si nécessaire et après examen de l'impact ;
-- vérifier l'état du service et des jails ;
-- confirmer le rétablissement des accès et de la supervision ;
-- documenter la cause et les mesures correctives.
-
-Le retour arrière ne doit pas laisser volontairement une protection désactivée sans décision documentée et mesure compensatoire.
-
-## 8. Références
-
-- [Fail2ban — Documentation](https://www.fail2ban.org/wiki/index.php/Main_Page)
+- [Fail2ban — Documentation du projet](https://www.fail2ban.org/wiki/index.php/Main_Page)
 - [Debian — Documentation](https://www.debian.org/doc/)
 - [Ubuntu Server — Documentation](https://documentation.ubuntu.com/server/)
